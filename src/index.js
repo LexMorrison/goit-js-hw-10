@@ -29,10 +29,11 @@ fetchBreeds()
     removeLoading();
   })
   .catch(error => {
+    removeLoading();
     if (error.message === '404') {
-      Notify.failure('Oops! Something went wrong! Try reloading the page!');
+      Notify.failure('We dont have this breed in the data');
     } else {
-      Notify.failure(error.message);
+      Notify.failure('Oops! Something went wrong! Try reloading the page!');
     }
   });
 
@@ -51,10 +52,11 @@ function onSelect(evt) {
       removeLoading();
     })
     .catch(error => {
+      removeLoading();
       if (error.message === '404') {
-        Notify.failure('Oops! Something went wrong! Try reloading the page!');
+        Notify.failure('We dont have this breed in the data');
       } else {
-        Notify.failure(error.message);
+        Notify.failure('Oops! Something went wrong! Try reloading the page!');
       }
     });
 }
